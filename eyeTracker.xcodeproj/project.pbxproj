@@ -7,13 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7C08DE392C2774A500C18621 /* eyeTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C08DE382C2774A500C18621 /* eyeTrackerApp.swift */; };
-		7C08DE3B2C2774A500C18621 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C08DE3A2C2774A500C18621 /* ContentView.swift */; };
+		7C013BE32C2C13580038972F /* UDPSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C013BE22C2C13580038972F /* UDPSender.swift */; };
+		7C08DE392C2774A500C18621 /* EyeTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C08DE382C2774A500C18621 /* EyeTrackerApp.swift */; };
+		7C08DE3B2C2774A500C18621 /* EyeTrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C08DE3A2C2774A500C18621 /* EyeTrackingView.swift */; };
 		7C08DE3D2C2774A700C18621 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C08DE3C2C2774A700C18621 /* Assets.xcassets */; };
 		7C08DE402C2774A700C18621 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C08DE3F2C2774A700C18621 /* Preview Assets.xcassets */; };
-		7C08DE4A2C2774A700C18621 /* eyeTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C08DE492C2774A700C18621 /* eyeTrackerTests.swift */; };
-		7C08DE542C2774A700C18621 /* eyeTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C08DE532C2774A700C18621 /* eyeTrackerUITests.swift */; };
-		7C08DE562C2774A700C18621 /* eyeTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C08DE552C2774A700C18621 /* eyeTrackerUITestsLaunchTests.swift */; };
+		7C08DE4A2C2774A700C18621 /* EyeTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C08DE492C2774A700C18621 /* EyeTrackerTests.swift */; };
+		7C08DE542C2774A700C18621 /* EyeTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C08DE532C2774A700C18621 /* EyeTrackerUITests.swift */; };
+		7C08DE562C2774A700C18621 /* EyeTrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C08DE552C2774A700C18621 /* EyeTrackerUITestsLaunchTests.swift */; };
+		7C0F28FF2C388A51002E6ECE /* UDPListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F28FE2C388A51002E6ECE /* UDPListener.swift */; };
+		7C360E3A2C29DD0B005251E0 /* EyeTrackerMods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C360E392C29DD0B005251E0 /* EyeTrackerMods.swift */; };
+		7C53F2522C28294200E5130F /* CalibrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53F2512C28294200E5130F /* CalibrationView.swift */; };
+		7CC917782C2A8817008BE359 /* ThinPlateSpline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC917772C2A8817008BE359 /* ThinPlateSpline.swift */; settings = {COMPILER_FLAGS = DACCELERATE_NEW_LAPACK; }; };
+		7CD517ED2C3908BA001F691E /* SocketTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD517EC2C3908BA001F691E /* SocketTestView.swift */; };
+		7CD8D6EC2C2E6EFB008F8759 /* BlendShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8D6E12C2E6EFB008F8759 /* BlendShape.swift */; };
+		7CD8D6ED2C2E6EFB008F8759 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8D6E22C2E6EFB008F8759 /* DeviceInfo.swift */; };
+		7CD8D6EE2C2E6EFB008F8759 /* Gaze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8D6E32C2E6EFB008F8759 /* Gaze.swift */; };
+		7CD8D6EF2C2E6EFB008F8759 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8D6E42C2E6EFB008F8759 /* Session.swift */; };
+		7CD8D6F02C2E6EFB008F8759 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8D6E62C2E6EFB008F8759 /* Configuration.swift */; };
+		7CD8D6F12C2E6EFB008F8759 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8D6E72C2E6EFB008F8759 /* Database.swift */; };
+		7CD8D6F22C2E6EFB008F8759 /* EyeTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8D6E82C2E6EFB008F8759 /* EyeTracking.swift */; };
+		7CD8D6F32C2E6EFB008F8759 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8D6E92C2E6EFB008F8759 /* Log.swift */; };
+		7CD8D6F42C2E6EFB008F8759 /* LowPassFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8D6EA2C2E6EFB008F8759 /* LowPassFilter.swift */; };
+		7CD8D6F72C2E6F54008F8759 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 7CD8D6F62C2E6F54008F8759 /* GRDB */; };
+		7CD8D6F92C2E839A008F8759 /* DisplayCalibrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8D6F82C2E839A008F8759 /* DisplayCalibrationView.swift */; };
+		7CFD0C972C2BCD9A005BBE95 /* RemoteDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFD0C962C2BCD9A005BBE95 /* RemoteDisplayView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,16 +52,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C013BE22C2C13580038972F /* UDPSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPSender.swift; sourceTree = "<group>"; };
 		7C08DE352C2774A500C18621 /* eyeTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eyeTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7C08DE382C2774A500C18621 /* eyeTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eyeTrackerApp.swift; sourceTree = "<group>"; };
-		7C08DE3A2C2774A500C18621 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7C08DE382C2774A500C18621 /* EyeTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTrackerApp.swift; sourceTree = "<group>"; };
+		7C08DE3A2C2774A500C18621 /* EyeTrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTrackingView.swift; sourceTree = "<group>"; };
 		7C08DE3C2C2774A700C18621 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C08DE3F2C2774A700C18621 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7C08DE452C2774A700C18621 /* eyeTrackerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eyeTrackerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7C08DE492C2774A700C18621 /* eyeTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eyeTrackerTests.swift; sourceTree = "<group>"; };
+		7C08DE492C2774A700C18621 /* EyeTrackerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTrackerTests.swift; sourceTree = "<group>"; };
 		7C08DE4F2C2774A700C18621 /* eyeTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eyeTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7C08DE532C2774A700C18621 /* eyeTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eyeTrackerUITests.swift; sourceTree = "<group>"; };
-		7C08DE552C2774A700C18621 /* eyeTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eyeTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7C08DE532C2774A700C18621 /* EyeTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTrackerUITests.swift; sourceTree = "<group>"; };
+		7C08DE552C2774A700C18621 /* EyeTrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		7C0F28FE2C388A51002E6ECE /* UDPListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPListener.swift; sourceTree = "<group>"; };
+		7C360E392C29DD0B005251E0 /* EyeTrackerMods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTrackerMods.swift; sourceTree = "<group>"; };
+		7C53F2512C28294200E5130F /* CalibrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationView.swift; sourceTree = "<group>"; };
+		7CC917772C2A8817008BE359 /* ThinPlateSpline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThinPlateSpline.swift; sourceTree = "<group>"; };
+		7CD517EC2C3908BA001F691E /* SocketTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketTestView.swift; sourceTree = "<group>"; };
+		7CD8D6E12C2E6EFB008F8759 /* BlendShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlendShape.swift; sourceTree = "<group>"; };
+		7CD8D6E22C2E6EFB008F8759 /* DeviceInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		7CD8D6E32C2E6EFB008F8759 /* Gaze.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gaze.swift; sourceTree = "<group>"; };
+		7CD8D6E42C2E6EFB008F8759 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		7CD8D6E62C2E6EFB008F8759 /* Configuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
+		7CD8D6E72C2E6EFB008F8759 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
+		7CD8D6E82C2E6EFB008F8759 /* EyeTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyeTracking.swift; sourceTree = "<group>"; };
+		7CD8D6E92C2E6EFB008F8759 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		7CD8D6EA2C2E6EFB008F8759 /* LowPassFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LowPassFilter.swift; sourceTree = "<group>"; };
+		7CD8D6F82C2E839A008F8759 /* DisplayCalibrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayCalibrationView.swift; sourceTree = "<group>"; };
+		7CFD0C962C2BCD9A005BBE95 /* RemoteDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDisplayView.swift; sourceTree = "<group>"; tabWidth = 4; wrapsLines = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7CD8D6F72C2E6F54008F8759 /* GRDB in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,9 +110,14 @@
 		7C08DE2C2C2774A500C18621 = {
 			isa = PBXGroup;
 			children = (
-				7C08DE372C2774A500C18621 /* eyeTracker */,
-				7C08DE482C2774A700C18621 /* eyeTrackerTests */,
-				7C08DE522C2774A700C18621 /* eyeTrackerUITests */,
+				7CD8D6EB2C2E6EFB008F8759 /* EyeTracking */,
+				7CC917772C2A8817008BE359 /* ThinPlateSpline.swift */,
+				7C013BE22C2C13580038972F /* UDPSender.swift */,
+				7C0F28FE2C388A51002E6ECE /* UDPListener.swift */,
+				7C360E392C29DD0B005251E0 /* EyeTrackerMods.swift */,
+				7C08DE372C2774A500C18621 /* EyeTracker */,
+				7C08DE482C2774A700C18621 /* EyeTrackerTests */,
+				7C08DE522C2774A700C18621 /* EyeTrackerUITests */,
 				7C08DE362C2774A500C18621 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,15 +132,19 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7C08DE372C2774A500C18621 /* eyeTracker */ = {
+		7C08DE372C2774A500C18621 /* EyeTracker */ = {
 			isa = PBXGroup;
 			children = (
-				7C08DE382C2774A500C18621 /* eyeTrackerApp.swift */,
-				7C08DE3A2C2774A500C18621 /* ContentView.swift */,
+				7CD517EC2C3908BA001F691E /* SocketTestView.swift */,
+				7C08DE382C2774A500C18621 /* EyeTrackerApp.swift */,
+				7CFD0C962C2BCD9A005BBE95 /* RemoteDisplayView.swift */,
+				7C08DE3A2C2774A500C18621 /* EyeTrackingView.swift */,
+				7C53F2512C28294200E5130F /* CalibrationView.swift */,
+				7CD8D6F82C2E839A008F8759 /* DisplayCalibrationView.swift */,
 				7C08DE3C2C2774A700C18621 /* Assets.xcassets */,
 				7C08DE3E2C2774A700C18621 /* Preview Content */,
 			);
-			path = eyeTracker;
+			path = EyeTracker;
 			sourceTree = "<group>";
 		};
 		7C08DE3E2C2774A700C18621 /* Preview Content */ = {
@@ -110,21 +155,45 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		7C08DE482C2774A700C18621 /* eyeTrackerTests */ = {
+		7C08DE482C2774A700C18621 /* EyeTrackerTests */ = {
 			isa = PBXGroup;
 			children = (
-				7C08DE492C2774A700C18621 /* eyeTrackerTests.swift */,
+				7C08DE492C2774A700C18621 /* EyeTrackerTests.swift */,
 			);
-			path = eyeTrackerTests;
+			path = EyeTrackerTests;
 			sourceTree = "<group>";
 		};
-		7C08DE522C2774A700C18621 /* eyeTrackerUITests */ = {
+		7C08DE522C2774A700C18621 /* EyeTrackerUITests */ = {
 			isa = PBXGroup;
 			children = (
-				7C08DE532C2774A700C18621 /* eyeTrackerUITests.swift */,
-				7C08DE552C2774A700C18621 /* eyeTrackerUITestsLaunchTests.swift */,
+				7C08DE532C2774A700C18621 /* EyeTrackerUITests.swift */,
+				7C08DE552C2774A700C18621 /* EyeTrackerUITestsLaunchTests.swift */,
 			);
-			path = eyeTrackerUITests;
+			path = EyeTrackerUITests;
+			sourceTree = "<group>";
+		};
+		7CD8D6E52C2E6EFB008F8759 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7CD8D6E12C2E6EFB008F8759 /* BlendShape.swift */,
+				7CD8D6E22C2E6EFB008F8759 /* DeviceInfo.swift */,
+				7CD8D6E32C2E6EFB008F8759 /* Gaze.swift */,
+				7CD8D6E42C2E6EFB008F8759 /* Session.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7CD8D6EB2C2E6EFB008F8759 /* EyeTracking */ = {
+			isa = PBXGroup;
+			children = (
+				7CD8D6E52C2E6EFB008F8759 /* Model */,
+				7CD8D6E62C2E6EFB008F8759 /* Configuration.swift */,
+				7CD8D6E72C2E6EFB008F8759 /* Database.swift */,
+				7CD8D6E82C2E6EFB008F8759 /* EyeTracking.swift */,
+				7CD8D6E92C2E6EFB008F8759 /* Log.swift */,
+				7CD8D6EA2C2E6EFB008F8759 /* LowPassFilter.swift */,
+			);
+			path = EyeTracking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +212,9 @@
 			dependencies = (
 			);
 			name = eyeTracker;
+			packageProductDependencies = (
+				7CD8D6F62C2E6F54008F8759 /* GRDB */,
+			);
 			productName = eyeTracker;
 			productReference = 7C08DE352C2774A500C18621 /* eyeTracker.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +287,9 @@
 				Base,
 			);
 			mainGroup = 7C08DE2C2C2774A500C18621;
+			packageReferences = (
+				7CD8D6F52C2E6F54008F8759 /* XCRemoteSwiftPackageReference "GRDB.swift" */,
+			);
 			productRefGroup = 7C08DE362C2774A500C18621 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +332,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C08DE3B2C2774A500C18621 /* ContentView.swift in Sources */,
-				7C08DE392C2774A500C18621 /* eyeTrackerApp.swift in Sources */,
+				7CD8D6EE2C2E6EFB008F8759 /* Gaze.swift in Sources */,
+				7C53F2522C28294200E5130F /* CalibrationView.swift in Sources */,
+				7CD8D6F32C2E6EFB008F8759 /* Log.swift in Sources */,
+				7CD8D6EC2C2E6EFB008F8759 /* BlendShape.swift in Sources */,
+				7C013BE32C2C13580038972F /* UDPSender.swift in Sources */,
+				7CC917782C2A8817008BE359 /* ThinPlateSpline.swift in Sources */,
+				7C360E3A2C29DD0B005251E0 /* EyeTrackerMods.swift in Sources */,
+				7CD8D6F02C2E6EFB008F8759 /* Configuration.swift in Sources */,
+				7CD517ED2C3908BA001F691E /* SocketTestView.swift in Sources */,
+				7CFD0C972C2BCD9A005BBE95 /* RemoteDisplayView.swift in Sources */,
+				7CD8D6EF2C2E6EFB008F8759 /* Session.swift in Sources */,
+				7C08DE3B2C2774A500C18621 /* EyeTrackingView.swift in Sources */,
+				7C0F28FF2C388A51002E6ECE /* UDPListener.swift in Sources */,
+				7CD8D6ED2C2E6EFB008F8759 /* DeviceInfo.swift in Sources */,
+				7CD8D6F92C2E839A008F8759 /* DisplayCalibrationView.swift in Sources */,
+				7CD8D6F12C2E6EFB008F8759 /* Database.swift in Sources */,
+				7CD8D6F42C2E6EFB008F8759 /* LowPassFilter.swift in Sources */,
+				7CD8D6F22C2E6EFB008F8759 /* EyeTracking.swift in Sources */,
+				7C08DE392C2774A500C18621 /* EyeTrackerApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +358,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C08DE4A2C2774A700C18621 /* eyeTrackerTests.swift in Sources */,
+				7C08DE4A2C2774A700C18621 /* EyeTrackerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,8 +366,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C08DE542C2774A700C18621 /* eyeTrackerUITests.swift in Sources */,
-				7C08DE562C2774A700C18621 /* eyeTrackerUITestsLaunchTests.swift in Sources */,
+				7C08DE542C2774A700C18621 /* EyeTrackerUITests.swift in Sources */,
+				7C08DE562C2774A700C18621 /* EyeTrackerUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +439,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -404,7 +496,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -421,25 +513,32 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"eyeTracker/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "EyeTracker/Preview\\ Content";
 				DEVELOPMENT_TEAM = 6K9W452PU5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "It is required to run EyeTracking off of your Front-facing camera";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires Location service to access orientation information";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = chrimp.eyeTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -450,25 +549,32 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"eyeTracker/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "EyeTracker/Preview\\ Content";
 				DEVELOPMENT_TEAM = 6K9W452PU5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "It is required to run EyeTracking off of your Front-facing camera";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires Location service to access orientation information";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				OTHER_SWIFT_FLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = chrimp.eyeTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -481,13 +587,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6K9W452PU5;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = chrimp.eyeTrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eyeTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/eyeTracker";
 			};
 			name = Debug;
@@ -501,13 +611,17 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6K9W452PU5;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = chrimp.eyeTrackerTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/eyeTracker.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/eyeTracker";
 			};
 			name = Release;
@@ -523,9 +637,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = chrimp.eyeTrackerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = eyeTracker;
 			};
 			name = Debug;
@@ -541,9 +659,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = chrimp.eyeTrackerUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_TARGET_NAME = eyeTracker;
 			};
 			name = Release;
@@ -588,6 +710,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7CD8D6F52C2E6F54008F8759 /* XCRemoteSwiftPackageReference "GRDB.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/groue/GRDB.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7CD8D6F62C2E6F54008F8759 /* GRDB */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7CD8D6F52C2E6F54008F8759 /* XCRemoteSwiftPackageReference "GRDB.swift" */;
+			productName = GRDB;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7C08DE2D2C2774A500C18621 /* Project object */;
 }
