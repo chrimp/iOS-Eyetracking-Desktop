@@ -12,38 +12,33 @@ import SwiftUI
 class UDPSender: ObservableObject {
     var connection: NWConnection?
     let queue = DispatchQueue(label: "UDP sender Queue")
-    var stateUpdateHandler: (NWConnection.State) -> Void
-    let nwHost: NWEndpoint.Host!
-    let nwPort: NWEndpoint.Port!
+    let sendEndpoint: NWEndpoint
     @Published var connectionState: NWConnection.State = .setup
 
-    init(host: String, port: UInt16, stateUpdateHandler: @escaping (NWConnection.State) -> Void) {
-        nwHost = NWEndpoint.Host(host)
-        nwPort = NWEndpoint.Port(rawValue: port)
-        connection = NWConnection(host: nwHost, port: nwPort, using: .udp)
-        self.stateUpdateHandler = stateUpdateHandler
-    }
-    
-    private func setupConnection() {
-        connection = NWConnection(host: nwHost, port: nwPort, using: .udp)
+    init(host: String, sendPort: UInt16) {
+        sendEndpoint = NWEndpoint.hostPort(host: NWEndpoint.Host(host), port: NWEndpoint.Port(rawValue: sendPort)!)
     }
 
     func start() {
-        connection!.stateUpdateHandler = { state in
-            self.stateUpdateHandler(state)
-            switch state {
-            case .failed(let error):
-                print("Failed to connect: \(error)")
-            case .waiting(let error):
-                print("Timeout: \(error)")
-            default:
-                break
+        connection = NWConnection(to: sendEndpoint, using: .udp)
+        connection!.stateUpdateHandler = { [weak self] state in
+            DispatchQueue.main.async {
+                self?.connectionState = state
+                switch state {
+                case .failed(let error):
+                    print("Failed to connect: \(error)")
+                case .waiting(let error):
+                    print("Timeout: \(error)")
+                default:
+                    break
+                }
             }
         }
         connection!.start(queue: queue)
     }
-
+    
     func sendData(_ message: String) {
+        if connectionState == .setup { return }
         let data = message.data(using: .utf8)!
         connection!.send(content: data, completion: .contentProcessed { error in
             if let error = error {
@@ -53,9 +48,12 @@ class UDPSender: ObservableObject {
     }
     
     public func getRemoteEndpoint() -> (NWEndpoint.Port, NWEndpoint.Host)? {
-        guard let port = self.nwPort else { return nil }
-        let addr = self.nwHost!
-        return (port, addr)
+        switch(connection?.endpoint) {
+        case .hostPort(let nwHost, let nwPort):
+            return (nwPort, nwHost)
+        default:
+            return nil
+        }
     }
 
     func stop() {

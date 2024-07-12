@@ -7,10 +7,12 @@
 
 import SwiftUI
 import os
+import Network
 
 struct SocketTestView: View {
     let udpLogger: Logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "udp")
     @StateObject var udpListener = UDPListener(port: 24135)
+    @State var lstState: NWConnection.State = .setup
     
     var body: some View {
         GeometryReader { geometry in
@@ -31,6 +33,7 @@ struct SocketTestView: View {
                 VStack {
                     Spacer()
                     Text("\(udpListener.connectionState)")
+                    Text("\(String(describing: udpListener.data!))")
                 }
             }
             .containerRelativeFrame([.horizontal, .vertical])
