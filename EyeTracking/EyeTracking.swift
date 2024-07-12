@@ -30,7 +30,7 @@ public class EyeTracking: NSObject, ObservableObject {
     public var tps: ThinPlateSpline?
     @Published public var publishedLookPoint: CGPoint!
     
-    private let movingAverage = MovingAverage(window: 10)
+    private let movingAverage = MovingAverage(window: 20)
 
     // MARK: - Internal Properties
 
@@ -185,8 +185,8 @@ extension EyeTracking: ARSessionDelegate {
         // Convert lookAtPoint vector to world coordinate space, from face coordinate space.
         let lookAtPointInWorld = anchor.transform * SIMD4<Float>(anchor.lookAtPoint, 1)
         let lookPointCameraFloat = frame.camera.projectPoint(SIMD3<Float>(x: lookAtPointInWorld.x, y: lookAtPointInWorld.y, z: lookAtPointInWorld.z),
-                                                             orientation: orientation, viewportSize: CGSize(width: 2560, height: 1440))
-        //                                                     viewportSize: size)
+                                                             orientation: orientation,// viewportSize: CGSize(width: 2560, height: 1440))
+                                                             viewportSize: size)
         
         let rawScreenPoint = CGPoint(x: (size.width - lookPointCameraFloat.x), y: (size.height - lookPointCameraFloat.y))
         let screenPoint: CGPoint = tps?.interpolate(x: rawScreenPoint.x, y: rawScreenPoint.y, rawPoint: CGPoint(x: 1280, y: 720), blend: transformBlend) ??

@@ -18,6 +18,7 @@
 		7C0F28FF2C388A51002E6ECE /* UDPListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C0F28FE2C388A51002E6ECE /* UDPListener.swift */; };
 		7C360E3A2C29DD0B005251E0 /* EyeTrackerMods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C360E392C29DD0B005251E0 /* EyeTrackerMods.swift */; };
 		7C53F2522C28294200E5130F /* CalibrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C53F2512C28294200E5130F /* CalibrationView.swift */; };
+		7C648A322C3A561A00086A00 /* LowPassFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C648A312C3A561A00086A00 /* LowPassFilter.swift */; };
 		7CC917782C2A8817008BE359 /* ThinPlateSpline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC917772C2A8817008BE359 /* ThinPlateSpline.swift */; settings = {COMPILER_FLAGS = DACCELERATE_NEW_LAPACK; }; };
 		7CD517ED2C3908BA001F691E /* SocketTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD517EC2C3908BA001F691E /* SocketTestView.swift */; };
 		7CD8D6EC2C2E6EFB008F8759 /* BlendShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8D6E12C2E6EFB008F8759 /* BlendShape.swift */; };
@@ -28,7 +29,6 @@
 		7CD8D6F12C2E6EFB008F8759 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8D6E72C2E6EFB008F8759 /* Database.swift */; };
 		7CD8D6F22C2E6EFB008F8759 /* EyeTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8D6E82C2E6EFB008F8759 /* EyeTracking.swift */; };
 		7CD8D6F32C2E6EFB008F8759 /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8D6E92C2E6EFB008F8759 /* Log.swift */; };
-		7CD8D6F42C2E6EFB008F8759 /* LowPassFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8D6EA2C2E6EFB008F8759 /* LowPassFilter.swift */; };
 		7CD8D6F72C2E6F54008F8759 /* GRDB in Frameworks */ = {isa = PBXBuildFile; productRef = 7CD8D6F62C2E6F54008F8759 /* GRDB */; };
 		7CD8D6F92C2E839A008F8759 /* DisplayCalibrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD8D6F82C2E839A008F8759 /* DisplayCalibrationView.swift */; };
 		7CFD0C972C2BCD9A005BBE95 /* RemoteDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CFD0C962C2BCD9A005BBE95 /* RemoteDisplayView.swift */; };
@@ -66,6 +66,8 @@
 		7C0F28FE2C388A51002E6ECE /* UDPListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UDPListener.swift; sourceTree = "<group>"; };
 		7C360E392C29DD0B005251E0 /* EyeTrackerMods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EyeTrackerMods.swift; sourceTree = "<group>"; };
 		7C53F2512C28294200E5130F /* CalibrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalibrationView.swift; sourceTree = "<group>"; };
+		7C648A302C3A258A00086A00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = Info.plist; path = eyeTracker/Info.plist; sourceTree = "<group>"; };
+		7C648A312C3A561A00086A00 /* LowPassFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LowPassFilter.swift; sourceTree = "<group>"; };
 		7CC917772C2A8817008BE359 /* ThinPlateSpline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThinPlateSpline.swift; sourceTree = "<group>"; };
 		7CD517EC2C3908BA001F691E /* SocketTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketTestView.swift; sourceTree = "<group>"; };
 		7CD8D6E12C2E6EFB008F8759 /* BlendShape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlendShape.swift; sourceTree = "<group>"; };
@@ -76,7 +78,6 @@
 		7CD8D6E72C2E6EFB008F8759 /* Database.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		7CD8D6E82C2E6EFB008F8759 /* EyeTracking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EyeTracking.swift; sourceTree = "<group>"; };
 		7CD8D6E92C2E6EFB008F8759 /* Log.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
-		7CD8D6EA2C2E6EFB008F8759 /* LowPassFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LowPassFilter.swift; sourceTree = "<group>"; };
 		7CD8D6F82C2E839A008F8759 /* DisplayCalibrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayCalibrationView.swift; sourceTree = "<group>"; };
 		7CFD0C962C2BCD9A005BBE95 /* RemoteDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDisplayView.swift; sourceTree = "<group>"; tabWidth = 4; wrapsLines = 1; };
 /* End PBXFileReference section */
@@ -110,6 +111,7 @@
 		7C08DE2C2C2774A500C18621 = {
 			isa = PBXGroup;
 			children = (
+				7C648A302C3A258A00086A00 /* Info.plist */,
 				7CD8D6EB2C2E6EFB008F8759 /* EyeTracking */,
 				7CC917772C2A8817008BE359 /* ThinPlateSpline.swift */,
 				7C013BE22C2C13580038972F /* UDPSender.swift */,
@@ -191,7 +193,7 @@
 				7CD8D6E72C2E6EFB008F8759 /* Database.swift */,
 				7CD8D6E82C2E6EFB008F8759 /* EyeTracking.swift */,
 				7CD8D6E92C2E6EFB008F8759 /* Log.swift */,
-				7CD8D6EA2C2E6EFB008F8759 /* LowPassFilter.swift */,
+				7C648A312C3A561A00086A00 /* LowPassFilter.swift */,
 			);
 			path = EyeTracking;
 			sourceTree = "<group>";
@@ -332,6 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C648A322C3A561A00086A00 /* LowPassFilter.swift in Sources */,
 				7CD8D6EE2C2E6EFB008F8759 /* Gaze.swift in Sources */,
 				7C53F2522C28294200E5130F /* CalibrationView.swift in Sources */,
 				7CD8D6F32C2E6EFB008F8759 /* Log.swift in Sources */,
@@ -348,7 +351,6 @@
 				7CD8D6ED2C2E6EFB008F8759 /* DeviceInfo.swift in Sources */,
 				7CD8D6F92C2E839A008F8759 /* DisplayCalibrationView.swift in Sources */,
 				7CD8D6F12C2E6EFB008F8759 /* Database.swift in Sources */,
-				7CD8D6F42C2E6EFB008F8759 /* LowPassFilter.swift in Sources */,
 				7CD8D6F22C2E6EFB008F8759 /* EyeTracking.swift in Sources */,
 				7C08DE392C2774A500C18621 /* EyeTrackerApp.swift in Sources */,
 			);
@@ -517,6 +519,7 @@
 				DEVELOPMENT_TEAM = 6K9W452PU5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = eyeTracker/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "It is required to run EyeTracking off of your Front-facing camera";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires Location service to access orientation information";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -553,6 +556,7 @@
 				DEVELOPMENT_TEAM = 6K9W452PU5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = eyeTracker/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "It is required to run EyeTracking off of your Front-facing camera";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "This app requires Location service to access orientation information";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;

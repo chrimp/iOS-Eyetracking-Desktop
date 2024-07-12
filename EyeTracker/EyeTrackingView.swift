@@ -10,8 +10,6 @@ import ARKit
 import os.log
 
 struct EyeTrackingView: View {
-    
-    //let eyeTracking = EyeTracking(configuration: Configuration(appID: "chrimp.eyeTracker", blendShapes: [.eyeBlinkLeft, .eyeBlinkRight]))
     let eyeTracking: EyeTracking
     @State var sessionID: String?
     @State var sessionTimer: Timer?

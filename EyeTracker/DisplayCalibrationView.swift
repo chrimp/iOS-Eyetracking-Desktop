@@ -9,13 +9,18 @@ import SwiftUI
 import os.log
 import ARKit
 import Foundation
+import Combine
 
 struct DisplayCalibrationView: View {
     let eyeTracking = EyeTracking(configuration: Configuration(appID: "chrimp.eyeTracker"))
     @State private var calibratedPoints = 0
     @State private var isEyeTrackerReady: Bool = false
+    @State private var foundRemote = false
     @State private var bgColor: Color = Color.black
-    var onCompletion: (EyeTracking) -> Void
+    @State var timer = Timer.publish(every: 1, tolerance: 0.5, on: .main, in: .common).autoconnect()
+    @StateObject var udpSender: UDPSender = UDPSender(host: "192.168.1.121", sendPort: 24135)
+    @StateObject var udpListener: UDPListener = UDPListener(port: 24135)
+    var onCompletion: (EyeTracking, UDPListener) -> Void
     let calibrationPoints = [CGPoint(x: 0, y: 0), CGPoint(x: 0, y: 1440),
                              CGPoint(x: 2560, y: 0), CGPoint(x: 2560, y: 1440),
                              CGPoint(x: 1280, y: 0), CGPoint(x: 1280, y: 1440),
@@ -26,7 +31,7 @@ struct DisplayCalibrationView: View {
     var body: some View {
         GeometryReader { geometry in
             ZStack {
-                if calibratedPoints < calibrationPoints.count && isEyeTrackerReady {
+                if calibratedPoints < calibrationPoints.count && (isEyeTrackerReady && foundRemote) {
                     VStack {
                         VStack {
                             Text("Look at \(pointInstruction[calibratedPoints]) then Tap the screen")
@@ -53,24 +58,47 @@ struct DisplayCalibrationView: View {
             .contentShape(Rectangle())
             .task {
                 if ARFaceTrackingConfiguration.isSupported {
+                    udpSender.start()
+                    udpListener.start()
                     startNewSession()
                     await waitForStart()
+                    await waitForUDP()
                 } else {
-                    onCompletion(eyeTracking)
+                    onCompletion(eyeTracking, udpListener)
                 }
             }
             .onTapGesture {
                 eyeTracking.collectGazePoint()
+                udpSender.sendData("TC")
                 bgColor = Color.indigo
                 calibratedPoints += 1
                 if calibratedPoints == calibrationPoints.count {
                     eyeTracking.createTPSObject(dynamicCalibrationPoints: calibrationPoints)
-                    onCompletion(eyeTracking)
+                    onCompletion(eyeTracking, udpListener)
                 }
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                     bgColor = Color.black
                 }
+            }
+            .onChange(of: udpListener.data) {
+                if udpListener.data == "CC" {
+                    udpListener.data = nil
+                    eyeTracking.collectGazePoint()
+                    calibratedPoints += 1
+                    bgColor = Color.indigo
+                    if calibratedPoints == calibrationPoints.count {
+                        eyeTracking.createTPSObject(dynamicCalibrationPoints: calibrationPoints)
+                        onCompletion(eyeTracking, udpListener)
+                    }
+                    
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        bgColor = Color.black
+                    }
+                }
+            }
+            .onReceive(timer) { _ in
+                udpSender.sendData("EyeTracker broadcast")
             }
         }
     }
@@ -94,8 +122,29 @@ struct DisplayCalibrationView: View {
             return
         }
     }
+    
+    func waitForUDP() async {
+        let entryTime = Int(Date().timeIntervalSince1970)
+        print("start")
+        while true {
+            do { try await Task.sleep(nanoseconds: 100000000) } catch {}
+            if udpListener.data == "Device Found" {
+                timer.upstream.connect().cancel()
+                withAnimation {
+                    self.foundRemote = true
+                }
+                return
+            }
+            if Int(Date().timeIntervalSince1970) - entryTime > 100 {
+                guard let _ = udpListener.connection else {
+                    fatalError("connection is nil")
+                }
+                fatalError("100 seconds elapsed, potential lock")
+            }
+        }
+    }
 }
 
 #Preview {
-    DisplayCalibrationView(onCompletion: {_ in return})
+    DisplayCalibrationView(onCompletion: {_, _ in return})
 }
