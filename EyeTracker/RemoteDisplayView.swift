@@ -102,7 +102,8 @@ struct RemoteDisplayView: View {
             }
             .onReceive(timer) { _ in
                 let point = eyeTracking.publishedLookPoint
-                udpSender.sendData(String(format: "%.3f, %.3f", point?.x ?? 0.0, point?.y ?? 0.0))
+                let blendShape = eyeTracking.puiblishedBlendShapes ?? (0.0, 0.0)
+                udpSender.sendData(String(format: "%.3f, %.3f;%.3f, %.3f", point?.x ?? 0.0, point?.y ?? 0.0, blendShape.0, blendShape.1))
             }
             .containerRelativeFrame([.horizontal, .vertical])
             .background(offScreen ? Color.black : Color.background)

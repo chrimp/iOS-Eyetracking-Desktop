@@ -22,7 +22,6 @@ enum view {
 @main
 struct eyeTrackerApp: App {
     @StateObject private var appState = AppState()
-    let testSocket = false
     let skipCalibration = false
     let viewSelec = view.remote
     
@@ -31,8 +30,10 @@ struct eyeTrackerApp: App {
             if viewSelec == view.socketTest { SocketTestView() } // Socket Test
             
             else if skipCalibration { // No calibration
+                var eyeTracking = EyeTracking.mock
+                let _ = eyeTracking.startSession()
                 if viewSelec == view.remote {
-                    RemoteDisplayView(eyeTracking: EyeTracking.mock, udpListener: UDPListener.mock)
+                    RemoteDisplayView(eyeTracking: eyeTracking, udpListener: UDPListener.mock)
                 } else if viewSelec == view.local {
                     EyeTrackingView(eyeTracking: EyeTracking.mock)
                 }
@@ -47,7 +48,7 @@ struct eyeTrackerApp: App {
                     })
                 }
                 
-                else  if viewSelec == view.local { // For device display
+                else if viewSelec == view.local { // For device display
                     CalibrationView(onCompletion: { session in
                         self.appState.calibratedSession = session
                         self.appState.showEyeTrackingView = true
