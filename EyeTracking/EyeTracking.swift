@@ -3,6 +3,7 @@ import os.log
 import UIKit
 import Accelerate
 import Combine
+import Foundation
 
 ///
 /// EyeTracking is a class for easily recording a user's gaze location, using
@@ -29,8 +30,9 @@ public class EyeTracking: NSObject, ObservableObject {
     
     public var tps: ThinPlateSpline?
     @Published public var publishedLookPoint: CGPoint!
+    @Published public var puiblishedBlendShapes: (CGFloat, CGFloat)!
     
-    private let movingAverage = MovingAverage(window: 20)
+    private let movingAverage = MovingAverage(window: 30)
 
     // MARK: - Internal Properties
 
@@ -122,7 +124,7 @@ extension EyeTracking {
         // Configure and start the ARSession to begin face tracking.
         let configuration = ARFaceTrackingConfiguration()
         configuration.isWorldTrackingEnabled = false
-        configuration.worldAlignment = .gravity
+        configuration.worldAlignment = .camera
 
         arSession.delegate = self
         arSession.run(configuration, options: [.resetTracking, .removeExistingAnchors, .resetSceneReconstruction])
@@ -184,14 +186,21 @@ extension EyeTracking: ARSessionDelegate {
         
         // Convert lookAtPoint vector to world coordinate space, from face coordinate space.
         let lookAtPointInWorld = anchor.transform * SIMD4<Float>(anchor.lookAtPoint, 1)
-        let lookPointCameraFloat = frame.camera.projectPoint(SIMD3<Float>(x: lookAtPointInWorld.x, y: lookAtPointInWorld.y, z: lookAtPointInWorld.z),
+        /*let lookPointCameraFloat = frame.camera.projectPoint(SIMD3<Float>(x: lookAtPointInWorld.x, y: lookAtPointInWorld.y, z: lookAtPointInWorld.z),
                                                              orientation: orientation,// viewportSize: CGSize(width: 2560, height: 1440))
-                                                             viewportSize: size)
+                                                             viewportSize: size)*/
+        let cameraTransform = frame.camera.transform
+        let lookAtPointCamera = cameraTransform.inverse * lookAtPointInWorld
+        let lookAtPointScreen = frame.camera.projectPoint(SIMD3<Float>(lookAtPointCamera.x, lookAtPointCamera.y, lookAtPointCamera.z), orientation: .portrait, viewportSize: size)
         
-        let rawScreenPoint = CGPoint(x: (size.width - lookPointCameraFloat.x), y: (size.height - lookPointCameraFloat.y))
+        
+        let rawScreenPoint = CGPoint(x: (size.width - lookAtPointScreen.x), y: (size.height - lookAtPointScreen.y))
         let screenPoint: CGPoint = tps?.interpolate(x: rawScreenPoint.x, y: rawScreenPoint.y, rawPoint: CGPoint(x: 1280, y: 720), blend: transformBlend) ??
         CGPoint(x: CGFloat(rawScreenPoint.x), y: CGFloat(rawScreenPoint.y))
         publishedLookPoint = movingAverage.update(with: screenPoint, blend: averageBlend)
+        let leftBlink = CGFloat(truncating: anchor.blendShapes[ARFaceAnchor.BlendShapeLocation.eyeBlinkRight] ?? 0.0)
+        let rightBlink = CGFloat(truncating: anchor.blendShapes[ARFaceAnchor.BlendShapeLocation.eyeBlinkLeft] ?? 0.0)
+        puiblishedBlendShapes = (leftBlink, rightBlink)
 
         // Update Session Data
         let frameTimestampUnix = timeOffset + frame.timestamp
